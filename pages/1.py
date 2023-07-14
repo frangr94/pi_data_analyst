@@ -17,7 +17,7 @@ nacionales=nacionales.iloc[::-1]
 # total de conexiones
 nacionales['total_conexiones']=nacionales['dial_up']+nacionales['banda_ancha_fija']
 
-st.write('''### Estadísticas nacionales sobre el servicio de internet''')
+st.markdown(f"<h3 style='text-align: center; color: white;'>Estadísticas nacionales sobre el servicio de internet </h3>", unsafe_allow_html=True)
 
 # ---FILTROS---
 año = st.sidebar.select_slider(
@@ -45,16 +45,16 @@ total_conexiones = nacionales_s['total_conexiones'].sum()
 left, middle, right = st.columns(3)
 
 with left:
-    st.write('''##### Ingresos totales:''')
-    st.write(f'''###### AR${ingresos_totales} mil''')
+    st.markdown(f"<h5 style='text-align: center; color: white;'>Ingresos totales: </h5> ", unsafe_allow_html=True)
+    st.markdown(f"<h5 style='text-align: center; color: white;'>AR${ingresos_totales} mil</h5>", unsafe_allow_html=True)
 
 with middle:
-    st.write(''' ##### Promedio de velocidad:''')
-    st.write(f'''###### {round(promedio_velocidad,2)} mbps''')
+    st.markdown(f"<h5 style='text-align: center; color: white;'>Promedio de velocidad: </h5>", unsafe_allow_html=True)
+    st.markdown(f"<h5 style='text-align: center; color: white;'>{round(promedio_velocidad,2)} mbps</h5>", unsafe_allow_html=True)
 
 with right:
-    st.write('''##### Conexiones a banda ancha:''')
-    st.write(f'''###### {total_conexiones}''')
+    st.markdown(f"<h5 style='text-align: center; color: white;'>Conexiones a banda ancha: </h5>", unsafe_allow_html=True)
+    st.markdown(f"<h5 style='text-align: center; color: white;'>{total_conexiones}</h5>", unsafe_allow_html=True)
 
 st.markdown('---')
 
