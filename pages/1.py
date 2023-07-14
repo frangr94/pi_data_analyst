@@ -65,7 +65,7 @@ st.sidebar.header('Filtros')
 left,right = st.columns(2)
 with left:
     # velocidad de internet promedio
-    layout = go.Layout(title='Velocidad de internet promedio en MBPS',
+    layout = go.Layout(title='Velocidad de internet promedio en MBPS. Fuente: ENACOM ',
                     xaxis=dict(title='Período'),
                     yaxis=dict(title='Velocidad en MBPS'),
                     width=700,
@@ -76,7 +76,7 @@ with left:
 with right:
     # conexiones
     conexiones = go.Scatter(x=nacionales_s.periodo,y=nacionales_s.total_conexiones)
-    layout = go.Layout(title='Conexiones totales',
+    layout = go.Layout(title='Conexiones totales. Fuente: ENACOM',
                     xaxis=dict(title='trimestre'),
                     yaxis=dict(title='Total de conexiones'),
                     width=700,
@@ -87,7 +87,7 @@ with right:
 
 # ingresos trimestrales
 # velocidad de internet promedio
-layout = go.Layout(title='Ingresos por prestacion de servicios (miles de pesos)',
+layout = go.Layout(title='Ingresos por prestacion de servicios (miles de pesos). Fuente: ENACOM',
                 xaxis=dict(title='Período'),
                 yaxis=dict(title='Ingresos (miles de pesos)'),
                 height=350,
