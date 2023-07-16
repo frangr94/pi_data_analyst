@@ -33,18 +33,44 @@ map_con = conexiones_lentas[['latitude','longitude']]
 left, right = st.columns(2)
 with left:
     # scatter map
+    st.write('''Localidades con conexiones lentas. Fuente: ENACOM''')
     st.map(data=map_con)
 with right:
+    # pie plot
+    st.write('''Población por región. Fuente: INDEC''')
     poblacion = pd.read_csv('datos_ordenados/poblacion_provincias.csv')
     agrupado = poblacion.groupby(by='region').sum()
     agrupado.drop(columns='provincia',inplace=True)
     agrupado.reset_index(inplace=True)
+    fig = px.pie(
+        data_frame=agrupado,
+        values='poblacion',
+        names='region',
+        color='region',
+        color_discrete_sequence=[
+            px.colors.qualitative.G10[1],
+            px.colors.qualitative.G10[2],
+            px.colors.qualitative.G10[3],
+            px.colors.qualitative.G10[4],
+            px.colors.qualitative.G10[5],
+            px.colors.qualitative.G10[6]],
+        labels={'region':'Region'},
+        template='presentation',
+        width=600,
+        height=600
 
-    fig, ax = plt.subplots()
-    ax.pie(agrupado.poblacion,labels=agrupado.region)
-    ax.axis('equal')
-    st.pyplot(fig)
+    )
+    st.plotly_chart(fig)
 
-
- # cuadro
+st.write('''Detalle Localidades con conexiones lentas''')
 st.write(conexiones_lentas)
+
+
+
+
+# MOSTRAR PALETA DE PLOTLY
+#fig = px.colors.qualitative.swatches()
+#fig.show()
+
+# PIE CHAR POBLACION
+

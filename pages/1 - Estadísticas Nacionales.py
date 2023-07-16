@@ -20,11 +20,12 @@ nacionales['total_conexiones']=nacionales['dial_up']+nacionales['banda_ancha_fij
 st.markdown(f"<h3 style='text-align: center; color: white;'>Estadísticas nacionales sobre el servicio de internet </h3>", unsafe_allow_html=True)
 
 # ---FILTROS---
+st.sidebar.header('Filtros')
+
 año = st.sidebar.select_slider(
     'Seleccionar años:',
     options=nacionales['año'].unique(),
-    value=max(nacionales.año.unique())
-    
+    value=max(nacionales.año.unique())   
 )
 
 trimestre = st.sidebar.multiselect(
@@ -58,7 +59,7 @@ with right:
 
 st.markdown('---')
 
-st.sidebar.header('Filtros')
+
 
 # --- GRAFICOS ---
 
