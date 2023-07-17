@@ -18,7 +18,9 @@ st.set_page_config(page_title='Estrategía de inversion internet',
                    initial_sidebar_state='collapsed'
                    )
 
-st.markdown(f"<h3 style='text-align: center; color: white;'>Servicio de internet por provincias </h3>", unsafe_allow_html=True)
+#st.markdown(f"<h3 style='text-align: center; color: white;'>Servicio de internet por provincias </h3>", unsafe_allow_html=True)
+st.header('Servicio de internet por provincias')
+st.markdown('---')
 
 # ---SECCION KPI ---
 left,right = st.columns(2)

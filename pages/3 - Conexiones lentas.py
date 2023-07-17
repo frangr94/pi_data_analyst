@@ -16,8 +16,6 @@ st.set_page_config(page_title='Estadísticas nacionales',
 
 locales = pd.read_csv('datos_ordenados/locales.csv')
 
-#locales = locales.loc[(locales['provincia'] == 'Mendoza')| (locales['provincia'] == 'Santa Cruz') ]
-
 locales = locales.sort_values(by='poblacion',ascending=False)
 
 locales=locales.rename(columns={'latitud':'latitude','longitud':'longitude'})
@@ -26,7 +24,10 @@ locales.loc[(locales['fibra_opt']=='NO') | (locales['4g']=='NO'),'conexion_lenta
 locales.loc[(locales['fibra_opt']=='SI') | (locales['4g']=='SI'),'conexion_lenta' ] = 'NO'
 conexiones_lentas = locales[(locales['conexion_lenta']=='SI') & (locales['poblacion']>1000)]
 
-st.markdown(f"<h3 style='text-align: center; color: white;'>Localidades con conexiones lentas (más de mil habitantes) </h3>", unsafe_allow_html=True)
+#st.markdown(f"<h3 style='text-align: center; color: white;'>Localidades con conexiones lentas (más de mil habitantes) </h3>", unsafe_allow_html=True)
+st.header('Localidades con conexiones lentas (más de mil habitantes)')
+st.markdown('---')
+
 
 map_con = conexiones_lentas[['latitude','longitude']]
 

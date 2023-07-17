@@ -17,8 +17,9 @@ nacionales=nacionales.iloc[::-1]
 # total de conexiones
 nacionales['total_conexiones']=nacionales['dial_up']+nacionales['banda_ancha_fija']
 
-st.markdown(f"<h3 style='text-align: center; color: white;'>Estadísticas nacionales sobre el servicio de internet </h3>", unsafe_allow_html=True)
-
+#st.markdown(f"<h3 style='text-align: center; color: white;'>Estadísticas nacionales sobre el servicio de internet </h3>", unsafe_allow_html=True)
+st.header('Estadísticas nacionales sobre el servicio de internet')
+st.markdown('---')
 # ---FILTROS---
 st.sidebar.header('Filtros')
 
@@ -43,14 +44,31 @@ ingresos_totales = nacionales_s['ingresos_miles'].sum()
 promedio_velocidad = nacionales_s['mbps_media'].mean()
 total_conexiones = nacionales_s['total_conexiones'].sum()
 
+ing_anuales = nacionales_s.groupby(['año'])['ingresos_miles'].sum()
+ing_anuales = pd.DataFrame(ing_anuales)
+ing_anuales.reset_index(inplace=True)
+ing_anuales['año_ant']=''
+for i in ing_anuales.index:
+    print(i)
+    if i == 0:
+        ing_anuales['año_ant'][i] = np.NaN
+    else:
+        ing_anuales['año_ant'][i] = ing_anuales['ingresos_miles'][i-1]
+
+ing_anuales['año_ant']=ing_anuales['año_ant'].astype(float)
+
+ing_anuales['variacion_interanual'] = ing_anuales['año_ant']/ing_anuales['ingresos_miles']*100
+
+crecimiento_interanual = ing_anuales['variacion_interanual'].mean()
+
 left, middle, right = st.columns(3)
 
 with left:
-    st.markdown(f"<h5 style='text-align: center; color: white;'>Ingresos totales: </h5> ", unsafe_allow_html=True)
-    st.markdown(f"<h5 style='text-align: center; color: white;'>AR${ingresos_totales} mil</h5>", unsafe_allow_html=True)
+    st.markdown(f"<h5 style='text-align: center; color: white;'>Crecimiento promedio interanual de los ingresos: </h5> ", unsafe_allow_html=True)
+    st.markdown(f"<h5 style='text-align: center; color: white;'>{round(crecimiento_interanual,2)}%</h5>", unsafe_allow_html=True)
 
 with middle:
-    st.markdown(f"<h5 style='text-align: center; color: white;'>Promedio de velocidad: </h5>", unsafe_allow_html=True)
+    st.markdown(f"<h5 style='text-align: center; color: white;'>Promedio nacional de velocidad: </h5>", unsafe_allow_html=True)
     st.markdown(f"<h5 style='text-align: center; color: white;'>{round(promedio_velocidad,2)} mbps</h5>", unsafe_allow_html=True)
 
 with right:

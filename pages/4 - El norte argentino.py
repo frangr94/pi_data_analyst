@@ -18,8 +18,9 @@ df.head()
 
 df = df[(df['region']=='NEA') | (df['region']=='NOA')]
 
-st.markdown(f"<h3 style='text-align: center; color: white;'>El norte argentino: mejor conectado </h3>", unsafe_allow_html=True)
-
+#st.markdown(f"<h3 style='text-align: center; color: white;'>El norte argentino: mejor conectado </h3>", unsafe_allow_html=True)
+st.header('El norte argentino: mejor conectado')
+st.markdown('---')
 
 left,right = st.columns(2)
 
@@ -109,4 +110,19 @@ with left:
     st.plotly_chart(fig)
 
 with right:
-    st.image('src/redes_1.png')
+    # plot consumo tv
+    st.write('Total nacional de subscripciones a TV. Fuente: ENACOM')
+    tv = pd.read_csv('datasets/Television.csv')
+    tv['Accesos TV por suscripción']=tv['Accesos TV por suscripción'].str.replace('.','')
+    tv['Accesos TV por suscripción']=tv['Accesos TV por suscripción'].astype(int)
+    tv.rename(columns={'Accesos TV por suscripción':'Subscripciones'},inplace=True)
+    tv=tv.groupby(['Año'])['Subscripciones'].sum()
+    layout = go.Layout(
+                xaxis=dict(title='Período'),
+                yaxis=dict(title='Subscripciones'),
+                width=700,
+                height=500,
+                )
+    
+    fig = go.Figure(data=go.Scatter(x=tv.index, y=tv),layout=layout)
+    st.plotly_chart(fig)
