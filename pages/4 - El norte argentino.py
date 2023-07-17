@@ -104,7 +104,10 @@ with left:
         text='Uso redes',
         color_discrete_sequence=[px.colors.qualitative.G10[1],
                 px.colors.qualitative.G10[2],
-                px.colors.qualitative.G10[3],]
+                px.colors.qualitative.G10[3],],
+        width=650,
+        height=500
+
     )
 
     st.plotly_chart(fig)
@@ -120,7 +123,7 @@ with right:
     layout = go.Layout(
                 xaxis=dict(title='Período'),
                 yaxis=dict(title='Subscripciones'),
-                width=700,
+                width=650,
                 height=500,
                 )
     

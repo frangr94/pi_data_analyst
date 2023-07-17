@@ -26,7 +26,7 @@ st.markdown('---')
 left,right = st.columns(2)
 with left:
     acceso_promedio = acceso_provincias['accesos_100_hogares'].mean()
-    st.markdown(f"<h5 style='text-align: center; color: white;'>Promedio accesos a internet nacional: </h5>", unsafe_allow_html=True)
+    st.markdown(f"<h5 style='text-align: center; color: white;'>Promedio nacional de accesos a internet por hogar: </h5>", unsafe_allow_html=True)
     st.markdown(f"<h5 style='text-align: center; color: white;'>{round(acceso_promedio,1)} </h5>", unsafe_allow_html=True)
 with right:
     salario_promedio = salarios['promedio_salario'].mean()
