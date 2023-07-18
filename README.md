@@ -54,11 +54,17 @@ En _El norte argentino_ se pueden ver datos sobre consumos digitales en el norte
 
 ![alt text](src/dash_4.png "P4")
 
-Los datos graficados otorgan información sobre los consumos digitales de los habitantes del NEA y NOA:
+Los datos graficados otorgan información sobre los consumos digitales de los habitantes del NEA y NOA en particular, y los argentinos en general:
 * La mayoría de las horas empleadas para consumos culturales se pasan en internet.
 * El 70% de los encuestados usaba internet en el año 2017
-* Para 2019, el 95% de los encuestados declaró estar activos en redes sociales.
+* Para 2019, el 95% de los encuestados declaró estar activo en redes sociales.
 * La cantidad de subscripciones a televisión ha sufrido una caída abrupta en el año 2022: es una gran oportunidad para el internet.
+
+KPI'S:
+* Crecimiento promedio interanual de los ingresos: el objetivo de este KPI es medir el aumento/descenso de los ingresos a través del tiempo. Es una medida clave para comprender el (de)crecimiento de la empresa.
+* Promedio nacional de accesos por hogar: este KPI sirve para monitorear la expansión total de la red de internet en el territorio nacional, ya que una mayor expansión implica un mayor ingreso.
+* Promedio nacional de velocidad: es un KPI que sirve para tener un registro de la calidad de las conexiones a nivel nacional. Dado que los ingresos crecen de forma concomitante a la velocidad ofrecida, es una medida que hay que seguir muy de cerca si se desea que el negocio crezca.
+
 
 
 El repositorio cuenta además con otros archivos pertinentes:
