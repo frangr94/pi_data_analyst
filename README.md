@@ -22,7 +22,7 @@ Esto abrirá la siguiente pantalla en su navegador por defecto:
 
 Ahora puedes navegar en la app como lo desees.
 
-En estadísticas nacionales se pueden ver datos sobre las conexiones a nivel nacional:
+En _Estadísticas nacionales_ se pueden ver datos sobre las conexiones a nivel nacional:
 
 ![alt text](src/dash_1.png "P1")
 
@@ -31,7 +31,7 @@ Los gráficos en ésta página aportan información bastante interesante:
 * Los ingresos percibidos por la prestación del servicio del internet ha tenido un crecimiento concomitante al desarrollo de las redes de internet.
 * Ergo, expandir la red implica un aumento paralelo de los ingresos.
 
-En acceso a internet se pueden ver datos sobre el acceso a internet y los ingresos de los argentinos:
+En _Acceso a internet_ se pueden ver datos sobre el acceso a internet y los ingresos de los argentinos:
 
 ![alt text](src/dash_2.png "P2")
 
@@ -41,7 +41,7 @@ De este apartado se pueden sacar algunas conclusiones:
 * En este sentido, la provincia de Santa Cruz se presenta como una buena oportunidad de inversión: aunque no tenga muchos habitantes, sus ingresos son altos y probablemente haya mucha demanda de servicios de internet.
 * Teniendo en cuenta la escasa población de la provincia de Santa Cruz, hay que mirar al norte si se desea expandir la red de internet
 
-En conexiones lentas se pueden ver las localidades demandantes de internet:
+En _Conexiones lentas_ se pueden ver las localidades demandantes de internet:
 
 ![alt text](src/dash_3.png "P3")
 Aquí, se pueden ver las localidades que no tienen acceso a internet por fibra óptica o 4g, por lo que han sido etiquetadas como localidades con conexiones lentas: se muestran aquellas con más de mil habitantes por considerarlas potenciales mercados:
@@ -50,7 +50,7 @@ Aquí, se pueden ver las localidades que no tienen acceso a internet por fibra �
 * Es urgente llevar un buen servicio de internet a esa zona.
 
 
-En norte argentino se pueden ver datos sobre consumos digitales en el norte del país:
+En _El norte argentino_ se pueden ver datos sobre consumos digitales en el norte del país:
 
 ![alt text](src/dash_4.png "P4")
 

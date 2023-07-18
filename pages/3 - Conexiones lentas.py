@@ -15,6 +15,7 @@ st.set_page_config(page_title='Estadísticas nacionales',
                    )
 
 locales = pd.read_csv('datos_ordenados/locales.csv')
+poblaciones = pd.read_csv('datos_ordenados/poblacion_provincias.csv')
 
 locales = locales.sort_values(by='poblacion',ascending=False)
 
@@ -22,11 +23,36 @@ locales=locales.rename(columns={'latitud':'latitude','longitud':'longitude'})
 
 locales.loc[(locales['fibra_opt']=='NO') | (locales['4g']=='NO'),'conexion_lenta' ] = 'SI'
 locales.loc[(locales['fibra_opt']=='SI') | (locales['4g']=='SI'),'conexion_lenta' ] = 'NO'
-conexiones_lentas = locales[(locales['conexion_lenta']=='SI') & (locales['poblacion']>1000)]
+
+locales['provincia']=locales['provincia'].astype(str)
+poblaciones['provincia']=poblaciones['provincia'].astype(str)
+locales=locales.merge(poblaciones,on='provincia',how='left')
+locales.drop(columns='poblacion_y',inplace=True)
+conexiones_lentas = locales[(locales['conexion_lenta']=='SI') & (locales['poblacion_x']>1000)]
 
 #st.markdown(f"<h3 style='text-align: center; color: white;'>Localidades con conexiones lentas (más de mil habitantes) </h3>", unsafe_allow_html=True)
 st.header('Localidades con conexiones lentas (más de mil habitantes)')
 st.markdown('---')
+
+poblacion = pd.read_csv('datos_ordenados/poblacion_provincias.csv')
+
+
+agrupado = poblacion.groupby(by='region').sum()
+agrupado.drop(columns='provincia',inplace=True)
+agrupado.reset_index(inplace=True)
+
+# ---FILTROS---
+st.sidebar.header('Filtros')
+
+region = st.sidebar.multiselect(
+    'Seleccionar regiones:',
+    options=agrupado['region'].unique(),
+    default=agrupado['region'].unique()   
+)
+
+conexiones_lentas = conexiones_lentas.query(
+    'region == @region '
+)
 
 
 map_con = conexiones_lentas[['latitude','longitude']]
@@ -39,10 +65,6 @@ with left:
 with right:
     # pie plot
     st.write('''Población por región. Fuente: INDEC''')
-    poblacion = pd.read_csv('datos_ordenados/poblacion_provincias.csv')
-    agrupado = poblacion.groupby(by='region').sum()
-    agrupado.drop(columns='provincia',inplace=True)
-    agrupado.reset_index(inplace=True)
     fig = px.pie(
         data_frame=agrupado,
         values='poblacion',
@@ -63,7 +85,18 @@ with right:
     )
     st.plotly_chart(fig)
 
-st.write('''Detalle Localidades con conexiones lentas''')
+
+
+
+
+
+
+
+
+
+
+conexiones_lentas.drop(columns='link',inplace=True)
+st.write('''Detalle localidades con conexiones lentas''')
 st.write(conexiones_lentas)
 
 
@@ -72,6 +105,4 @@ st.write(conexiones_lentas)
 # MOSTRAR PALETA DE PLOTLY
 #fig = px.colors.qualitative.swatches()
 #fig.show()
-
-# PIE CHAR POBLACION
 

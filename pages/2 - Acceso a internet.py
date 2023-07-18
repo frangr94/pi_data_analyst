@@ -31,7 +31,7 @@ with left:
 with right:
     salario_promedio = salarios['promedio_salario'].mean()
     st.markdown(f"<h5 style='text-align: center; color: white;'>Salario promedio nacional: </h5>", unsafe_allow_html=True)
-    st.markdown(f"<h5 style='text-align: center; color: white;'>{round(salario_promedio,1)} </h5>", unsafe_allow_html=True)
+    st.markdown(f"<h5 style='text-align: center; color: white;'>${round(salario_promedio,1)} </h5>", unsafe_allow_html=True)
 
 st.markdown('---')
 

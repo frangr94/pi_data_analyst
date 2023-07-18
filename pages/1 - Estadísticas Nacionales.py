@@ -110,7 +110,7 @@ layout = go.Layout(title='Ingresos por prestacion de servicios (miles de pesos).
                 xaxis=dict(title='Período'),
                 yaxis=dict(title='Ingresos (miles de pesos)'),
                 height=350,
-                width=1400)
+                width=1530)
 fig = go.Figure(data=go.Scatter(x=nacionales_s.periodo, y=nacionales_s.ingresos_miles),layout=layout)
 st.plotly_chart(fig)
 

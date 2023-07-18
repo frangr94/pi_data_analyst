@@ -87,7 +87,7 @@ with right:
 
 with left:
     # grafico redes
-    st.write('''Porcentaje de la población activa en redes sociales. Fuente: ENCC 2019''')
+    st.write('''Porcentaje de la población activa en redes sociales (nación). Fuente: ENCC 2019''')
     redes_dict = {'2013':['57%'],
                 '2017':['70%'],
                 '2022':['95%']}
