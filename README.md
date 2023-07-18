@@ -26,17 +26,39 @@ En estadísticas nacionales se pueden ver datos sobre las conexiones a nivel nac
 
 ![alt text](src/dash_1.png "P1")
 
+Los gráficos en ésta página aportan información bastante interesante:
+* El crecimiento del  mercado del internet ha tenido un crecimiento con una aceleración cada vez mayor desde el año 2014 hasta la actualidad, tanto en velocidad como en cantidad de conexiones.
+* Los ingresos percibidos por la prestación del servicio del internet ha tenido un crecimiento concomitante al desarrollo de las redes de internet.
+* Ergo, expandir la red implica un aumento paralelo de los ingresos.
+
 En acceso a internet se pueden ver datos sobre el acceso a internet y los ingresos de los argentinos:
 
 ![alt text](src/dash_2.png "P2")
 
+De este apartado se pueden sacar algunas conclusiones:
+* En terminos generales el norte argentino es la zona más relegada en términos de acceso a internet, aunque la provincia de Santa Cruz también presenta un nivel de acceso bastante bajo. 
+* A su vez, las provincias del norte presentan los niveles de ingresos más bajos del país. Santa Cruz, al contrario, presenta unos de los niveles de ingresos más altos.
+* En este sentido, la provincia de Santa Cruz se presenta como una buena oportunidad de inversión: aunque no tenga muchos habitantes, sus ingresos son altos y probablemente haya mucha demanda de servicios de internet.
+* Teniendo en cuenta la escasa población de la provincia de Santa Cruz, hay que mirar al norte si se desea expandir la red de internet
+
 En conexiones lentas se pueden ver las localidades demandantes de internet:
 
 ![alt text](src/dash_3.png "P3")
+Aquí, se pueden ver las localidades que no tienen acceso a internet por fibra óptica o 4g, por lo que han sido etiquetadas como localidades con conexiones lentas: se muestran aquellas con más de mil habitantes por considerarlas potenciales mercados:
+* Se puede apreciar que la mayoría de las localidades se ubica en el norte argentino, aunque la más poblada está en Mendoza.
+* Si bien el norte comprende el 30% de la población, es la zona que peor conectividad presenta.
+* Es urgente llevar un buen servicio de internet a esa zona.
+
 
 En norte argentino se pueden ver datos sobre consumos digitales en el norte del país:
 
 ![alt text](src/dash_4.png "P4")
+
+Los datos graficados otorgan información sobre los consumos digitales de los habitantes del NEA y NOA:
+* La mayoría de las horas empleadas para consumos culturales se pasan en internet.
+* El 70% de los encuestados usaba internet en el año 2017
+* Para 2019, el 95% de los encuestados declaró estar activos en redes sociales.
+* La cantidad de subscripciones a televisión ha sufrido una caída abrupta en el año 2022: es una gran oportunidad para el internet.
 
 
 El repositorio cuenta además con otros archivos pertinentes:
