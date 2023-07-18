@@ -81,6 +81,16 @@ st.markdown('---')
 
 # --- GRAFICOS ---
 
+# ingresos trimestrales
+layout = go.Layout(title='Ingresos por prestacion de servicios (miles de pesos). Fuente: ENACOM',
+                xaxis=dict(title='Período'),
+                yaxis=dict(title='Ingresos (miles de pesos)'),
+                height=350,
+                width=1530)
+fig = go.Figure(data=go.Scatter(x=nacionales_s.periodo, y=nacionales_s.ingresos_miles),layout=layout)
+st.plotly_chart(fig)
+
+
 left,right = st.columns(2)
 with left:
     # velocidad de internet promedio
@@ -104,14 +114,5 @@ with right:
     st.plotly_chart(fig)
 
 
-# ingresos trimestrales
-# velocidad de internet promedio
-layout = go.Layout(title='Ingresos por prestacion de servicios (miles de pesos). Fuente: ENACOM',
-                xaxis=dict(title='Período'),
-                yaxis=dict(title='Ingresos (miles de pesos)'),
-                height=350,
-                width=1530)
-fig = go.Figure(data=go.Scatter(x=nacionales_s.periodo, y=nacionales_s.ingresos_miles),layout=layout)
-st.plotly_chart(fig)
 
 
