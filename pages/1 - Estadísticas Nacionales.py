@@ -92,7 +92,7 @@ st.plotly_chart(fig)
 
 
 left,right = st.columns(2)
-with left:
+with right:
     # velocidad de internet promedio
     layout = go.Layout(title='Velocidad de internet promedio en MBPS. Fuente: ENACOM ',
                     xaxis=dict(title='Período'),
@@ -102,7 +102,7 @@ with left:
     fig = go.Figure(data=go.Scatter(x=nacionales_s.periodo, y=nacionales_s.mbps_media),layout=layout)
     st.plotly_chart(fig)
 
-with right:
+with left:
     # conexiones
     conexiones = go.Scatter(x=nacionales_s.periodo,y=nacionales_s.total_conexiones)
     layout = go.Layout(title='Conexiones totales. Fuente: ENACOM',
