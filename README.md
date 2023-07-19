@@ -12,7 +12,7 @@ Se puede clonar el repositorio ejecutando:
 
 Las visualizaciones fueron creadas con Streamlit y se pueden ejecutar localmente con el comando:
 
-    $ streamlit run home.py
+    $ streamlit run Home.py
 
 #### Nota: es necesario tener instaladas las librerías que utiliza el script.
 
