@@ -105,7 +105,7 @@ with right:
 with left:
     # conexiones
     conexiones = go.Scatter(x=nacionales_s.periodo,y=nacionales_s.total_conexiones)
-    layout = go.Layout(title='Conexiones totales. Fuente: ENACOM',
+    layout = go.Layout(title='Conexiones fijas totales. Fuente: ENACOM',
                     xaxis=dict(title='trimestre'),
                     yaxis=dict(title='Total de conexiones'),
                     width=700,
